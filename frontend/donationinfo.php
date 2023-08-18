@@ -58,7 +58,11 @@
                     </tr>
                     <?php
                         }
+                        else{
+                            $serial--;
+                        }
                     }
+                    
                 ?>
                 </tbody>
             </table>
