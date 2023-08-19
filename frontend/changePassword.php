@@ -16,7 +16,7 @@ if (isset($_GET['Reset'])) {
                 $sql = "UPDATE users SET Password ='" . sha1($Pass) . "' WHERE CodeV='{$_GET['Reset']}'";
                 $result = mysqli_query($db, $sql);
                 if ($result) {
-                    header("Location: login.php");
+                    header("Location: changePassSuccess.php");
                 }
             } else {
                 $msg = "<div class='alert alert-danger'>Password and Confirm Password is not match</div>";
