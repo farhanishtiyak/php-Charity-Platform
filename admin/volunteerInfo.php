@@ -69,11 +69,14 @@
                                             $volunteering_period       = mysqli_real_escape_string($db,$row['volunteering_period']);
                                             $message       = mysqli_real_escape_string($db,$row['message']);
                                             $reference       = mysqli_real_escape_string($db,$row['reference']);
+                                            $verification       = mysqli_real_escape_string($db,$row['verification']);
 
                                             $serial++;
 
                                             // printing Each Donation Info on Admin panel
-                                            ?>
+                                            if($verification==1){
+
+                                                ?>
                                     <tr>
                                         <td scope="row"><?php echo $serial; ?></td>
                                         <td><?php echo $name; ?></td>
@@ -90,6 +93,7 @@
                                         <td><?php echo $reference; ?></td>
                                     </tr>
                                     <?php
+                                            }
                                         }
                                     ?>
                                 </tbody>

@@ -2,17 +2,6 @@
 
 
 <?php
-
-//Import PHPMailer classes into the global namespace
-//These must be at the top of your script, not inside a function
-use PHPMailer\PHPMailer\PHPMailer;
-use PHPMailer\PHPMailer\SMTP;
-use PHPMailer\PHPMailer\Exception;
-
-//Load Composer's autoloader
-require 'vendor/autoload.php';
-$msg = "";
-
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // Define database connection constants
     define('DB_HOST', 'localhost');
@@ -46,7 +35,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $reference = test_input($_POST['reference']);
     $volunteeringPeriod = test_input($_POST['volunteering_period']);
     $message = test_input($_POST['message']);
-    $Code = mysqli_real_escape_string($db, sha1(rand()));
 
     // Create a new database connection
     $conn = mysqli_connect('localhost', 'root', '', 'charity');
@@ -55,67 +43,31 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if (!$conn) {
         die('Database connection failed: ' . mysqli_connect_error());
     }
-	// $emailExistOrNot = 0;
-	// $emailCheck = "SELECT email FROM volunteer where email = '$email'";
-	// $emailCheckFeedback = mysqli_query($db,$emailCheck);
-	// $emailExistOrNot = mysqli_num_rows($emailCheckFeedback);
+	$emailExistOrNot = 0;
+	$emailCheck = "SELECT email FROM volunteer where email = '$email'";
+	$emailCheckFeedback = mysqli_query($db,$emailCheck);
+	$emailExistOrNot = mysqli_num_rows($emailCheckFeedback);
 
-	// if($emailExistOrNot>0){
-	// 	echo "<div class='d-flex justify-content-center'><span class='bg-dark text-light p-2'>Registration failed. Email Already Exists. Try Again</span></div>";
-	// 	//header('location: volunteer.php');
-	// }
-
-    if (mysqli_num_rows(mysqli_query($db, "SELECT * FROM volunteer where email='{$email}'")) > 0) {
-        $msg = "<div class='alert alert-danger'>This Email:'{$email}' has been alredy existe.</div>";
-    }
+	if($emailExistOrNot>0){
+		echo "<div class='d-flex justify-content-center'><span class='bg-dark text-light p-2'>Registration failed. Email Already Exists. Try Again</span></div>";
+		//header('location: volunteer.php');
+	}
     else{
-
 		// Prepare the SQL statement to insert data into the table
-		$sql = "INSERT INTO volunteer (name, email, phone, gender, birthdate, address, availability, skills, bloodGroup, reference, volunteering_period, message,CodeV) 
-		VALUES ('$name', '$email', '$phone', '$gender', '$birthdate', '$address', '$availability', '$skills', '$blood_group', '$reference', '$volunteeringPeriod', '$message','$Code')";
+		$sql = "INSERT INTO volunteer (name, email, phone, gender, birthdate, address, availability, skills, bloodGroup, reference, volunteering_period, message) 
+		VALUES ('$name', '$email', '$phone', '$gender', '$birthdate', '$address', '$availability', '$skills', '$blood_group', '$reference', '$volunteeringPeriod', '$message')";
 	
 		// Execute the SQL statement
 		if (mysqli_query($conn, $sql)) {
 			//echo 'Registration successful!';
-			//header('location: volSuccess.php');
+			header('location: volSuccess.php');
+		} else {
+			echo 'Error: ' . $sql . '<br>' . mysqli_error($conn);
+		}
+	}
 
-
-             //Create an instance; passing `true` enables exceptions
-             $mail = new PHPMailer(true);
-
-                try {
-                    //Server settings
-                    $mail->SMTPDebug = 0;                      //Enable verbose debug output
-                    $mail->isSMTP();                                            //Send using SMTP
-                    $mail->Host       = 'smtp.gmail.com';                     //Set the SMTP server to send through
-                    $mail->SMTPAuth   = true;                                   //Enable SMTP authentication
-                    $mail->Username   = 'ishtiyaksezar@gmail.com';                     //SMTP username (your email address which you used to generate app password)
-                    $mail->Password   = 'gowbvrjczctpdixv';                               //SMTP password (Your gamil app password)
-                    $mail->SMTPSecure = 'ssl';            //Enable implicit TLS encryption
-                    $mail->Port       = 465;                                    //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
-
-                    //Recipients
-                    $mail->setFrom('ishtiyaksezar@gmail.com','Charity');
-                    $mail->addAddress($email,$name);
-                    //Content
-                    $mail->isHTML(true);                                  //Set email format to HTML
-                    $mail->Subject = 'Volunteer Registration Link';
-                    $mail->Body    = '<p> This is the Verifecation Link<b><a href="http://localhost/charity/frontend/volSuccess.php?Verification='.$Code.'"> Click here for confirm Volunteer Registration </a></b></p>';
-
-                    $mail->send();
-                 
-                    }catch (Exception $e){
-                        echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
-                    }
-                    $msg = "<div class='alert alert-info'>we've send a verification link on Your email Address<br>Please Confirm the Link</div>";
-        }
-        else{
-                $msg = "<div class='alert alert-danger'>Something was Wrong</div>"; 
-        }
-	} 
     mysqli_close($conn);
 }
-    
 ?>
 
 <head>
@@ -136,7 +88,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             <form method="POST">
 
                 <div class="row">
-                    <?php echo $msg ?>
                     <div class="col-md-6">
                         <div class="form-group">
                             <label for="name">Full Name:</label>

@@ -1,6 +1,26 @@
 <?php  
 	include "inc/header.php";
+
+
+    
+    // code for updating verification status on database (0->1) if link was clicked
+    if (isset($_GET['Verification'])) {
+    $raquet = mysqli_query($db, "SELECT * FROM volunteer WHERE CodeV='{$_GET['Verification']}'");
+    if (mysqli_num_rows($raquet) > 0) {
+        $query = mysqli_query($db, "UPDATE volunteer SET verification='1' WHERE CodeV='{$_GET['Verification']}'");
+        if ($query) {
+        $rowv = mysqli_fetch_assoc($raquet);
+        header("Location: volSuccess.php");
+        }else{
+        header("Location: volunteer.php");
+        }
+    } else {
+        header("Location: volunteer.php");
+    }
+    }
 ?>
+
+
 
 <head>
     <link href="https://fonts.googleapis.com/css?family=Nunito+Sans:400,400i,700,900&display=swap" rel="stylesheet">
