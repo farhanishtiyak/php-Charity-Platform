@@ -93,8 +93,11 @@ if (isset($_GET['Verification'])) {
                 $row = mysqli_fetch_assoc($resulte);
                 if ($row['verification'] === '1') {
                     $_SESSION['loginUserId']        = $row['u_id'];
+                    $_SESSION['loginName']          = $row['name'];
                     $_SESSION['loginEmail']         =$email;
                     $_SESSION['loginUserRole']      = $row['user_role'];
+                    $_SESSION['loginPhoto']         = $row['photo'];
+                    $_SESSION['loginStatus']        = $row['status'];
 
                          if($_SESSION['loginUserRole']==1 || $_SESSION['loginUserRole']==2){
                             header('Location: ../admin/dashboard.php');

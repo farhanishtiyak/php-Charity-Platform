@@ -33,7 +33,8 @@
 					$totalCollection+=$row['d_amount'];
 				}
 			?>
-            <h3 class="text-white">Till now total Collection : <?php echo $totalCollection ?> BDT</h3>
+            <h3 class="text-white">Till now total Collection : <strong class="text-dark"><?php echo $totalCollection ?>
+                    BDT</strong></h3>
             <a href="#donate" class="head-btn head-btn2 btn text-uppercase">Donate Now</a>
         </div>
     </div>
