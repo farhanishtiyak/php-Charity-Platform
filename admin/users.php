@@ -11,125 +11,136 @@
     if($do=='add')
     {
         ?>
-        <div class="page-content">
-            <section class="row">
-                <div class="col-12 col-lg-12">
-                    
-                    <div class="page-heading">
-                        <div class="page-title">
-                            <div class="row">
+<div class="page-content">
+    <section class="row">
+        <div class="col-12 col-lg-12">
 
-                                <div class="col-12 col-md-6 order-md-1 order-last">
-                                    <h3>Add New User</h3>
-                                    <p class="text-subtitle text-muted">Add new user into the database</p>
-                                </div>
+            <div class="page-heading">
+                <div class="page-title">
+                    <div class="row">
 
-                                <div class="col-12 col-md-6 order-md-2 order-first">
-                                    <nav aria-label="breadcrumb" class="breadcrumb-header float-start float-lg-end">
-                                        <ol class="breadcrumb">
-                                            <li class="breadcrumb-item"><a href="dashboard.php">Dashboard</a></li>
-                                            <li class="breadcrumb-item active" aria-current="page">DataTable</li>
-                                        </ol>
-                                    </nav>
-                                </div>
-                            </div>
+                        <div class="col-12 col-md-6 order-md-1 order-last">
+                            <h3>Add New User</h3>
+                            <p class="text-subtitle text-muted">Add new user into the database</p>
                         </div>
 
-                        <!-- Add new user form start -->
-                        
-                        <section class="section">
-                            <div class="row">
-                                
-                                    <div class="col-md-12">
-                                        <div class="card">
-                                            <div class="card-header">
-                                                <h4 class="card-title">Add New User</h4>
-                                            </div>
+                        <div class="col-12 col-md-6 order-md-2 order-first">
+                            <nav aria-label="breadcrumb" class="breadcrumb-header float-start float-lg-end">
+                                <ol class="breadcrumb">
+                                    <li class="breadcrumb-item"><a href="dashboard.php">Dashboard</a></li>
+                                    <li class="breadcrumb-item active" aria-current="page">DataTable</li>
+                                </ol>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
 
-                                            <form method = "POST" enctype = "multipart/form-data">
+                <!-- Add new user form start -->
 
-                                                <div class="card-body">
-                                                    <div class="row">
-                                                        <div class="col-lg-6 col-md-12">
-                                                            <div class="mb-3">
-                                                                <label for="user_name" class="form-label">Name</label>
-                                                                <input class="form-control" type="text" id="user_name" placeholder = "Name" name="user_name" autocomplete="off">
-                                                            </div>
-                                                            <div class="mb-3">
-                                                                <label for="email" class="form-label">Email</label>
-                                                                <input class="form-control" type="email" id="email" placeholder="example@something.com" name = "email" autocomplete="off" required>
-                                                            </div>
-                                                            <div class="mb-3">
-                                                                <label for="phone" class="form-label">Phone Number</label>
-                                                                <input class="form-control" type="number" id="phone" placeholder= "Phone Number" name = "phone">
-                                                            </div>
+                <section class="section">
+                    <div class="row">
 
-                                                            <div class="mb-3">
-                                                                <label for="password" class="form-label">Password</label>
-                                                                <input class="form-control" type="password" id="password" placeholder= "Password" name = "password" autocomplete="off" autocomplete="new-password">
-                                                            </div>
+                        <div class="col-md-12">
+                            <div class="card">
+                                <div class="card-header">
+                                    <h4 class="card-title">Add New User</h4>
+                                </div>
 
-                                                            <div class="mb-3">
-                                                                <label for="address" class="form-label">Address</label>
-                                                                <textarea name="address" id="address" rows="3" class="form-control"></textarea>
-                                                                <label class="form-label">Your current address</label>
-                                                            </div>
-                                                        </div>
-                                                        <div class="col-lg-6 col-md-12">
-                                                        <div class="mb-3">
-                                                                <label for="birthday" class="form-label">Date Of Birth</label>
-                                                                <input class="form-control" type="date" id="birthday" name = "birthday">
-                                                                
-                                                            </div>
-                                                            
-                                                            <div>
-                                                                <label for="gender" class="form-label">Gender</label>
-                                                                <select name="gender" id="gender" class="form-select">
-                                                                    <option>Please Select Your Gender</option>
-                                                                    <option>Male</option>
-                                                                    <option>Female</option>
-                                                                    <option>Other</option>
-                                                                </select>
-                                                            </div>
+                                <form method="POST" enctype="multipart/form-data">
 
-                                                            <div class="mb-3">
-                                                                <label for="biodata" class="form-label">Biodata</label>
-                                                                <textarea name="biodata" id="biodata" rows="2" class="form-control"></textarea>
-                                                                <label class="form-label">Write Your Biodata</label>
-                                                            </div>
-
-                                                            <div>
-                                                                <label for="user_role" class="form-label">User Role</label>
-                                                                <select name="user_role" id="user_role" class="form-select">
-                                                                    <option>Please Select User Role</option>
-                                                                    <option value="0" selected >Subscriber</option>
-                                                                    <option value="1">Editor</option>
-                                                                    <option value="2">Admin</option>
-                                                                </select>
-                                                            </div>
-
-                                                            <div class="mb-3">
-                                                                <label for="photo" class="form-label">Choose Picture</label>
-                                                                <input class="form-control" type="file" id="photo" name="photo">
-                                                                <label class="form-label">Choose Picture that has (.png, .jpg, .jpeg) extension...</label>
-                                                            </div>
-
-                                                            <div class="col-12 d-flex justify-content-end">
-                                                                <button type="submit" class="btn btn-primary me-1 mb-1 btn-lg" name="add_user">Submit</button>
-                                                                <button type="reset"
-                                                                class="btn btn-light-secondary me-1 mb-1">Reset</button>
-                                                            </div>
-
-                                                        </div>
-                                                    </div>
+                                    <div class="card-body">
+                                        <div class="row">
+                                            <div class="col-lg-6 col-md-12">
+                                                <div class="mb-3">
+                                                    <label for="user_name" class="form-label">Name</label>
+                                                    <input class="form-control" type="text" id="user_name"
+                                                        placeholder="Name" name="user_name" autocomplete="off">
+                                                </div>
+                                                <div class="mb-3">
+                                                    <label for="email" class="form-label">Email</label>
+                                                    <input class="form-control" type="email" id="email"
+                                                        placeholder="example@something.com" name="email"
+                                                        autocomplete="off" required>
+                                                </div>
+                                                <div class="mb-3">
+                                                    <label for="phone" class="form-label">Phone Number</label>
+                                                    <input class="form-control" type="number" id="phone"
+                                                        placeholder="Phone Number" name="phone">
                                                 </div>
 
-                                            </form>
+                                                <div class="mb-3">
+                                                    <label for="password" class="form-label">Password</label>
+                                                    <input class="form-control" type="password" id="password"
+                                                        placeholder="Password" name="password" autocomplete="off"
+                                                        autocomplete="new-password">
+                                                </div>
+
+                                                <div class="mb-3">
+                                                    <label for="address" class="form-label">Address</label>
+                                                    <textarea name="address" id="address" rows="3"
+                                                        class="form-control"></textarea>
+                                                    <label class="form-label">Your current address</label>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-6 col-md-12">
+                                                <div class="mb-3">
+                                                    <label for="birthday" class="form-label">Date Of Birth</label>
+                                                    <input class="form-control" type="date" id="birthday"
+                                                        name="birthday">
+
+                                                </div>
+
+                                                <div>
+                                                    <label for="gender" class="form-label">Gender</label>
+                                                    <select name="gender" id="gender" class="form-select">
+                                                        <option>Please Select Your Gender</option>
+                                                        <option>Male</option>
+                                                        <option>Female</option>
+                                                        <option>Other</option>
+                                                    </select>
+                                                </div>
+
+                                                <div class="mb-3">
+                                                    <label for="biodata" class="form-label">Biodata</label>
+                                                    <textarea name="biodata" id="biodata" rows="2"
+                                                        class="form-control"></textarea>
+                                                    <label class="form-label">Write Your Biodata</label>
+                                                </div>
+
+                                                <div>
+                                                    <label for="user_role" class="form-label">User Role</label>
+                                                    <select name="user_role" id="user_role" class="form-select">
+                                                        <option>Please Select User Role</option>
+                                                        <option value="0" selected>Subscriber</option>
+                                                        <option value="1">Editor</option>
+                                                        <option value="2">Admin</option>
+                                                    </select>
+                                                </div>
+
+                                                <div class="mb-3">
+                                                    <label for="photo" class="form-label">Choose Picture</label>
+                                                    <input class="form-control" type="file" id="photo" name="photo">
+                                                    <label class="form-label">Choose Picture that has (.png, .jpg,
+                                                        .jpeg) extension...</label>
+                                                </div>
+
+                                                <div class="col-12 d-flex justify-content-end">
+                                                    <button type="submit" class="btn btn-primary me-1 mb-1 btn-lg"
+                                                        name="add_user">Submit</button>
+                                                    <button type="reset"
+                                                        class="btn btn-light-secondary me-1 mb-1">Reset</button>
+                                                </div>
+
+                                            </div>
                                         </div>
                                     </div>
 
+                                </form>
+                            </div>
+                        </div>
 
-                                <?php 
+
+                        <?php 
 
                                     if(isset($_POST['add_user']))
                                     {
@@ -191,68 +202,68 @@
                                 ?>
 
 
-                            </div>
-                        </section>
-                        <!-- Basic File Browser end -->
                     </div>
-                
-                </div>
-                
-            </section>
+                </section>
+                <!-- Basic File Browser end -->
+            </div>
+
         </div>
-        
-        <?php
+
+    </section>
+</div>
+
+<?php
     }
 
     if($do=='manage')
     {
         
         ?>
-        
-            
-            <div class="page-content">
-                <section class="row">
-                    <div class="col-12 col-lg-12">
-                        
-                        <div class="page-heading">
-                            <div class="page-title">
-                                <div class="row">
-                                    <div class="col-12 col-md-6 order-md-1 order-last">
-                                        <h3>DataTable</h3>
-                                        <p class="text-subtitle text-muted">For user to check their list</p>
-                                    </div>
-                                    <div class="col-12 col-md-6 order-md-2 order-first">
-                                        <nav aria-label="breadcrumb" class="breadcrumb-header float-start float-lg-end">
-                                            <ol class="breadcrumb">
-                                                <li class="breadcrumb-item"><a href="dashboard.php">Dashboard</a></li>
-                                                <li class="breadcrumb-item active" aria-current="page">DataTable</li>
-                                            </ol>
-                                        </nav>
-                                    </div>
-                                </div>
-                            </div>
-                            <section class="section">
-                                <div class="card">
-                                    <div class="card-header">
-                                        Simple Datatable
-                                    </div>
-                                    <div class="card-body">
-                                        <table class="table table-striped" id="table1">
-                                            <thead>
-                                                <tr>
-                                                    <th>Serial</th>
-                                                    <th>Photo</th>
-                                                    <th>Name</th>
-                                                    <th>Email</th>
-                                                    <th>Phone</th>
-                                                    <th>User Role</th>
-                                                    <th>Status</th>
-                                                    <th>Action</th>
-                                                </tr>
-                                            </thead>
-                                            <tbody>
 
-                                                <?php
+
+<div class="page-content">
+    <section class="row">
+        <div class="col-12 col-lg-12">
+
+            <div class="page-heading">
+                <div class="page-title">
+                    <div class="row">
+                        <div class="col-12 col-md-6 order-md-1 order-last">
+                            <h3>DataTable</h3>
+                            <p class="text-subtitle text-muted">For user to check their list</p>
+                        </div>
+                        <div class="col-12 col-md-6 order-md-2 order-first">
+                            <nav aria-label="breadcrumb" class="breadcrumb-header float-start float-lg-end">
+                                <ol class="breadcrumb">
+                                    <li class="breadcrumb-item"><a href="dashboard.php">Dashboard</a></li>
+                                    <li class="breadcrumb-item active" aria-current="page">DataTable</li>
+                                </ol>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+                <section class="section">
+                    <div class="card">
+                        <div class="card-header">
+                            User Datatable
+                        </div>
+                        <div class="card-body">
+                            <table class="table table-striped" id="table1">
+                                <thead>
+                                    <tr>
+                                        <th>Serial</th>
+                                        <th>Photo</th>
+                                        <th>Name</th>
+                                        <th>Email</th>
+                                        <th>Phone</th>
+                                        <th>User Role</th>
+                                        <th>Status</th>
+                                        <th>Action</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+
+                                    <?php
 
                                                     $u_query = "SELECT * FROM users";
                                                     $u_db_feedback = mysqli_query($db,$u_query);
@@ -275,17 +286,17 @@
                                                         $serial++;
                                                     ?>
 
-                                                    <tr>
-                                                            <td><?php echo $serial; ?></td>
-                                                            <td>
-                                                                <img src="assets/images/users/<?php echo $photo; ?>" alt="Sorry" 
-                                                                width = "40" class="circle" style="border-radius: 100%">
-                                                            </td>
-                                                            <td><?php echo $name; ?></td>
-                                                            <td><?php echo $email; ?></td>
-                                                            <td><?php echo $phone; ?></td>
-                                                            <td>
-                                                                <?php 
+                                    <tr>
+                                        <td><?php echo $serial; ?></td>
+                                        <td>
+                                            <img src="assets/images/users/<?php echo $photo; ?>" alt="Sorry" width="40"
+                                                class="circle" style="border-radius: 100%">
+                                        </td>
+                                        <td><?php echo $name; ?></td>
+                                        <td><?php echo $email; ?></td>
+                                        <td><?php echo $phone; ?></td>
+                                        <td>
+                                            <?php 
                                                                     if($user_role==0) 
                                                                     {    
                                                                         echo '<span class="badge bg-success">Subscriber</span>';
@@ -299,9 +310,9 @@
                                                                         echo '<span class="badge bg-danger">Admin</span>';
                                                                     }
                                                                 ?>
-                                                            </td>
-                                                            <td>
-                                                                <?php 
+                                        </td>
+                                        <td>
+                                            <?php 
                                                                     if($status==0) 
                                                                     {    
                                                                         echo '<span class="badge bg-danger">InActive</span>';
@@ -312,58 +323,62 @@
                                                                     }
                                                                     
                                                                 ?>
-                                                            </td>
+                                        </td>
 
-                                                            <td>
-                                                                <a type="button" data-toggle="tooltip" data-placement="top" title="Profile" href="profile.php?do=<?php echo $u_id; ?>">
-                                                                    <i class="fa fa-eye ms-2 text-success" aria-hidden="true"></i>
-                                                                </a>
-                                                                
-                                                                <?php 
+                                        <td>
+                                            <a type="button" data-toggle="tooltip" data-placement="top" title="Profile"
+                                                href="profile.php?do=<?php echo $u_id; ?>">
+                                                <i class="fa fa-eye ms-2 text-success" aria-hidden="true"></i>
+                                            </a>
+
+                                            <?php 
                                                                     $userRole = $_SESSION['loginUserRole'];
                                                                     if($userRole==2){
                                                                         ?>
-                                                                            <a type="button" data-toggle="tooltip" data-placement="top" title="Edit" href="users.php?do=edit&edit_id=<?php echo $u_id; ?>">
-                                                                                <i class="fa fa-pencil-square-o ms-2 text-warning" aria-hidden="true"></i>
-                                                                            </a>
-                                                                        <?php
+                                            <a type="button" data-toggle="tooltip" data-placement="top" title="Edit"
+                                                href="users.php?do=edit&edit_id=<?php echo $u_id; ?>">
+                                                <i class="fa fa-pencil-square-o ms-2 text-warning"
+                                                    aria-hidden="true"></i>
+                                            </a>
+                                            <?php
                                                                     }
                                                                 ?>
 
-                                                                <?php 
+                                            <?php 
                                                                     $userRole = $_SESSION['loginUserRole'];
                                                                     if($userRole==2){
                                                                         ?>
-                                                                            <a type="button" data-toggle="tooltip" data-placement="top" title="Delete" href="users.php?do=delete&d_id=<?php echo $u_id; ?>">
-                                                                                <i class="fa fa-trash ms-2 text-danger" aria-hidden="true"></i>
-                                                                            </a>
-                                                                        <?php
+                                            <a type="button" data-toggle="tooltip" data-placement="top" title="Delete"
+                                                href="users.php?do=delete&d_id=<?php echo $u_id; ?>">
+                                                <i class="fa fa-trash ms-2 text-danger" aria-hidden="true"></i>
+                                            </a>
+                                            <?php
                                                                     }
                                                                 ?>
-                                                  
-                                                                
-                                                            </td>
-                                                    </tr>
-                                                    <?php
+
+
+                                        </td>
+                                    </tr>
+                                    <?php
 
                                                     }
 
                                                 ?>
-                                            </tbody>
-                                        </table>
-                                    </div>
-                                </div>
-
-                            </section>
+                                </tbody>
+                            </table>
                         </div>
-                    
                     </div>
-                    
+
                 </section>
             </div>
 
+        </div>
 
-        <?php
+    </section>
+</div>
+
+
+<?php
     }
 
     if($do=='edit')
@@ -391,154 +406,177 @@
 
 
         ?>
-        <div class="page-content">
-            <section class="row">
-                <div class="col-12 col-lg-12">
-                    
-                    <div class="page-heading">
-                        <div class="page-title">
-                            <div class="row">
+<div class="page-content">
+    <section class="row">
+        <div class="col-12 col-lg-12">
 
-                                <div class="col-12 col-md-6 order-md-1 order-last">
-                                    <h3>Edit User</h3>
-                                    <p class="text-subtitle text-muted">Edit user into the database</p>
-                                </div>
+            <div class="page-heading">
+                <div class="page-title">
+                    <div class="row">
 
-                                <div class="col-12 col-md-6 order-md-2 order-first">
-                                    <nav aria-label="breadcrumb" class="breadcrumb-header float-start float-lg-end">
-                                        <ol class="breadcrumb">
-                                            <li class="breadcrumb-item"><a href="dashboard.php">Dashboard</a></li>
-                                            <li class="breadcrumb-item active" aria-current="page">DataTable</li>
-                                        </ol>
-                                    </nav>
-                                </div>
-                            </div>
+                        <div class="col-12 col-md-6 order-md-1 order-last">
+                            <h3>Edit User</h3>
+                            <p class="text-subtitle text-muted">Edit user into the database</p>
                         </div>
-                        <!--Edit user form start -->
-                        
-                        <section class="section">
-                            <div class="row">
-                                
-                            <div class="col-md-12">
-                                        <div class="card">
-                                            <div class="card-header">
-                                                <h4 class="card-title">Edit User</h4>
-                                            </div>
 
-                                            <form method = "POST" enctype = "multipart/form-data" action = "users.php?do=update">
+                        <div class="col-12 col-md-6 order-md-2 order-first">
+                            <nav aria-label="breadcrumb" class="breadcrumb-header float-start float-lg-end">
+                                <ol class="breadcrumb">
+                                    <li class="breadcrumb-item"><a href="dashboard.php">Dashboard</a></li>
+                                    <li class="breadcrumb-item active" aria-current="page">DataTable</li>
+                                </ol>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+                <!--Edit user form start -->
 
-                                                <div class="card-body">
-                                                    <div class="row">
-                                                        <div class="col-lg-6 col-md-12">
-                                                            <div class="mb-3">
-                                                                <label for="user_name" class="form-label">Name</label>
-                                                                <input class="form-control" type="text" id="user_name" placeholder = "Name" 
-                                                                name="user_name" autocomplete="off" value = "<?php echo $name; ?>">
-                                                            </div>
-                                                            <div class="mb-3">
-                                                                <label for="email" class="form-label">Email</label>
-                                                                <input class="form-control" type="email" id="email" placeholder="example@something.com" 
-                                                                name = "email" autocomplete="off" required value = "<?php echo $email; ?>">
-                                                            </div>
-                                                            <div class="mb-3">
-                                                                <label for="phone" class="form-label">Phone Number</label>
-                                                                <input class="form-control" type="number" id="phone" placeholder= "Phone Number" 
-                                                                name = "phone" value = "<?php echo $phone; ?>">
-                                                            </div>
+                <section class="section">
+                    <div class="row">
 
-                                                            <div class="mb-3">
-                                                                <label for="password" class="form-label">Password</label>
-                                                                <input class="form-control" type="password" id="password" placeholder= "Password" name = "password" autocomplete="off" autocomplete="new-password">
-                                                            </div>
+                        <div class="col-md-12">
+                            <div class="card">
+                                <div class="card-header">
+                                    <h4 class="card-title">Edit User</h4>
+                                </div>
 
-                                                            <div class="mb-3">
-                                                                <label for="address" class="form-label">Address</label>
-                                                                <textarea name="address" id="address" rows="3" class="form-control" value = "<?php echo $address; ?>"><?php echo $address; ?></textarea>
-                                                                <label class="form-label">Your current address</label>
-                                                            </div>
-                                                            <div class="mb-3">
-                                                                <label for="birthday" class="form-label">Date Of Birth</label>
-                                                                <input class="form-control" type="date" id="birthday" name = "birthday" value = "<?php echo $birthday; ?>">
-                                                                
-                                                            </div>
-                                                            
-                                                        </div>
-                                                        <div class="col-lg-6 col-md-12">
-                                                            
-                                                            <div>
-                                                                <label for="gender" class="form-label">Gender</label>
-                                                                <select name="gender" id="gender" class="form-select">
-                                                                    <option>Please Select Your Gender</option>
-                                                                    <option value = 'Male' <?php if($gender == 'Male') echo 'selected'; ?>>Male</option>
-                                                                    <option value = 'Female' <?php if($gender == 'Female') echo 'selected'; ?>>Female</option>
-                                                                    <option value = 'Other' <?php if($gender == 'Other') echo 'selected'; ?>>Other</option>
-                                                                </select>
-                                                            </div>
+                                <form method="POST" enctype="multipart/form-data" action="users.php?do=update">
 
-                                                            <div class="mb-3">
-                                                                <label for="biodata" class="form-label">Biodata</label>
-                                                                <textarea name="biodata" id="biodata" rows="2" class="form-control" value = "<?php echo $biodata; ?>">
-                                                                <?php echo $biodata; ?>
-                                                                </textarea>
-                                                                <label class="form-label">Write Your Biodata</label>
-                                                            </div>
-
-                                                            <div>
-                                                                <label for="user_role" class="form-label">User Role</label>
-                                                                <select name="user_role" id="user_role" class="form-select">
-                                                                    <option>Please Select User Role</option>
-                                                                    <option value="0" <?php if($user_role == 0) echo 'selected'; ?> >Subscriber</option>
-                                                                    <option value="1" <?php if($user_role == 1) echo 'selected'; ?>>Editor</option>
-                                                                    <option value="2" <?php if($user_role == 2) echo 'selected'; ?>>Admin</option>
-                                                                </select>
-                                                            </div>
-
-                                                            <div>
-                                                                <label for="status" class="form-label">Status</label>
-                                                                <select name="status" id="status" class="form-select">
-                                                                    <option>Please Select User Status</option>
-                                                                    <option value="0" <?php if($status == 0) echo 'selected'; ?> >InActive</option>
-                                                                    <option value="1" <?php if($status == 1) echo 'selected'; ?>>Active</option>
-                                                                </select>
-                                                            </div>
-
-                                                            <div class="mb-3">
-                                                                <label  class="form-label">Current Picture</label><br>
-                                                                <img src="assets/images/users/<?php echo $photo; ?>" alt="User Image" 
-                                                                width = "100" class="circle" style="border-radius: 100%"> <br>
-                                                                
-                                                                <label for="photo" class="form-label">Choose New Picture</label>
-                                                                <input class="form-control" type="file" id="photo" name="photo">
-                                                                <label class="form-label">Choose Picture that has (.png, .jpg, .jpeg) extension...</label>
-                                                            </div>
-
-                                                            <input type="hidden" class="form-control" name="edit_user_id" value = <?php echo $edit_id; ?> >
-
-                                                            <div class="col-12 d-flex justify-content-end">
-                                                                <button type="submit" class="btn btn-primary me-1 mb-1 btn-lg" name="edit_user">Submit</button>
-                                                                <button type="reset"
-                                                                class="btn btn-light-secondary me-1 mb-1">Reset</button>
-                                                            </div>
-
-                                                        </div>
-                                                    </div>
+                                    <div class="card-body">
+                                        <div class="row">
+                                            <div class="col-lg-6 col-md-12">
+                                                <div class="mb-3">
+                                                    <label for="user_name" class="form-label">Name</label>
+                                                    <input class="form-control" type="text" id="user_name"
+                                                        placeholder="Name" name="user_name" autocomplete="off"
+                                                        value="<?php echo $name; ?>">
+                                                </div>
+                                                <div class="mb-3">
+                                                    <label for="email" class="form-label">Email</label>
+                                                    <input class="form-control" type="email" id="email"
+                                                        placeholder="example@something.com" name="email"
+                                                        autocomplete="off" required value="<?php echo $email; ?>">
+                                                </div>
+                                                <div class="mb-3">
+                                                    <label for="phone" class="form-label">Phone Number</label>
+                                                    <input class="form-control" type="number" id="phone"
+                                                        placeholder="Phone Number" name="phone"
+                                                        value="<?php echo $phone; ?>">
                                                 </div>
 
-                                            </form>
+                                                <div class="mb-3">
+                                                    <label for="password" class="form-label">Password</label>
+                                                    <input class="form-control" type="password" id="password"
+                                                        placeholder="Password" name="password" autocomplete="off"
+                                                        autocomplete="new-password">
+                                                </div>
+
+                                                <div class="mb-3">
+                                                    <label for="address" class="form-label">Address</label>
+                                                    <textarea name="address" id="address" rows="3" class="form-control"
+                                                        value="<?php echo $address; ?>"><?php echo $address; ?></textarea>
+                                                    <label class="form-label">Your current address</label>
+                                                </div>
+                                                <div class="mb-3">
+                                                    <label for="birthday" class="form-label">Date Of Birth</label>
+                                                    <input class="form-control" type="date" id="birthday"
+                                                        name="birthday" value="<?php echo $birthday; ?>">
+
+                                                </div>
+
+                                            </div>
+                                            <div class="col-lg-6 col-md-12">
+
+                                                <div>
+                                                    <label for="gender" class="form-label">Gender</label>
+                                                    <select name="gender" id="gender" class="form-select">
+                                                        <option>Please Select Your Gender</option>
+                                                        <option value='Male'
+                                                            <?php if($gender == 'Male') echo 'selected'; ?>>Male
+                                                        </option>
+                                                        <option value='Female'
+                                                            <?php if($gender == 'Female') echo 'selected'; ?>>Female
+                                                        </option>
+                                                        <option value='Other'
+                                                            <?php if($gender == 'Other') echo 'selected'; ?>>Other
+                                                        </option>
+                                                    </select>
+                                                </div>
+
+                                                <div class="mb-3">
+                                                    <label for="biodata" class="form-label">Biodata</label>
+                                                    <textarea name="biodata" id="biodata" rows="2" class="form-control"
+                                                        value="<?php echo $biodata; ?>">
+                                                                <?php echo $biodata; ?>
+                                                                </textarea>
+                                                    <label class="form-label">Write Your Biodata</label>
+                                                </div>
+
+                                                <div>
+                                                    <label for="user_role" class="form-label">User Role</label>
+                                                    <select name="user_role" id="user_role" class="form-select">
+                                                        <option>Please Select User Role</option>
+                                                        <option value="0" <?php if($user_role == 0) echo 'selected'; ?>>
+                                                            Subscriber</option>
+                                                        <option value="1" <?php if($user_role == 1) echo 'selected'; ?>>
+                                                            Editor</option>
+                                                        <option value="2" <?php if($user_role == 2) echo 'selected'; ?>>
+                                                            Admin</option>
+                                                    </select>
+                                                </div>
+
+                                                <div>
+                                                    <label for="status" class="form-label">Status</label>
+                                                    <select name="status" id="status" class="form-select">
+                                                        <option>Please Select User Status</option>
+                                                        <option value="0" <?php if($status == 0) echo 'selected'; ?>>
+                                                            InActive</option>
+                                                        <option value="1" <?php if($status == 1) echo 'selected'; ?>>
+                                                            Active</option>
+                                                    </select>
+                                                </div>
+
+                                                <div class="mb-3">
+                                                    <label class="form-label">Current Picture</label><br>
+                                                    <img src="assets/images/users/<?php echo $photo; ?>"
+                                                        alt="User Image" width="100" class="circle"
+                                                        style="border-radius: 100%"> <br>
+
+                                                    <label for="photo" class="form-label">Choose New Picture</label>
+                                                    <input class="form-control" type="file" id="photo" name="photo">
+                                                    <label class="form-label">Choose Picture that has (.png, .jpg,
+                                                        .jpeg) extension...</label>
+                                                </div>
+
+                                                <input type="hidden" class="form-control" name="edit_user_id"
+                                                    value=<?php echo $edit_id; ?>>
+
+                                                <div class="col-12 d-flex justify-content-end">
+                                                    <button type="submit" class="btn btn-primary me-1 mb-1 btn-lg"
+                                                        name="edit_user">Submit</button>
+                                                    <button type="reset"
+                                                        class="btn btn-light-secondary me-1 mb-1">Reset</button>
+                                                </div>
+
+                                            </div>
                                         </div>
                                     </div>
 
+                                </form>
                             </div>
-                        </section>
-                        <!-- Basic File Browser end -->
+                        </div>
+
                     </div>
-                
-                </div>
-                
-            </section>
+                </section>
+                <!-- Basic File Browser end -->
+            </div>
+
         </div>
-        
-        <?php
+
+    </section>
+</div>
+
+<?php
 
     }
 
@@ -714,7 +752,7 @@
     }
 
 ?>
-            
+
 
 
 

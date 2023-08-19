@@ -3,9 +3,9 @@
     include "inc/header.php";
 
 ?>
-            
 
-            
+
+
 <div class="page-heading">
     <h3>Website Statistics</h3>
 </div>
@@ -287,7 +287,7 @@
                     </div>
                 </div>
             </div> -->
-            
+
             <div class="card">
                 <div class="card-header">
                     <h4>Website Visitors</h4>
