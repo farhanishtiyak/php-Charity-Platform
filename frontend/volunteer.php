@@ -89,8 +89,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     $mail->isSMTP();                                            //Send using SMTP
                     $mail->Host       = 'smtp.gmail.com';                     //Set the SMTP server to send through
                     $mail->SMTPAuth   = true;                                   //Enable SMTP authentication
-                    $mail->Username   = 'ishtiyaksezar@gmail.com';                     //SMTP username (your email address which you used to generate app password)
-                    $mail->Password   = 'gowbvrjczctpdixv';                               //SMTP password (Your gamil app password)
+                    $mail->Username   = 'ishtiyak@gmail.com';                     //SMTP username (your email address which you used to generate app password)
+                    $mail->Password   = '';                               //SMTP password (Your gamil app password)
                     $mail->SMTPSecure = 'ssl';            //Enable implicit TLS encryption
                     $mail->Port       = 465;                                    //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
 
