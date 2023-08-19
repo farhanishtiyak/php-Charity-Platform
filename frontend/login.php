@@ -60,46 +60,49 @@
     }
 ?>
 
-	<head>
-		<!-- volunteer css -->
+<head>
+    <!-- volunteer css -->
 
-		<link rel="stylesheet" type="text/css" href="css/volunteer.css">
+    <link rel="stylesheet" type="text/css" href="css/volunteer.css">
 
-		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-		integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-	
-	</head>
-	
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
-    <body>
-        
-    <div class="container mt-5 card p-5">
-            <div class="row" >
-                <div class="col-md-8 offset-md-2">
-                    <h2 class="text-center mb-4">Sign In</h2>
-                    <form method = "POST" >
+</head>
 
 
-                        <div class="form-group">
-                            <label for="email">Email Address:</label>
-                            <input type="email" class="form-control" id="email" name="email" required>
-                        </div>
+<body>
+
+    <div class="container mt-5 card p-5" style="-webkit-box-shadow: 1px 0px 20px 1px rgba(0,0,0,0.81);
+-moz-box-shadow: 1px 0px 20px 1px rgba(0,0,0,0.81);
+box-shadow: 1px 0px 20px 1px rgba(0,0,0,0.81);">
+        <div class="row">
+            <div class="col-md-8 offset-md-2">
+                <h2 class="text-center mb-4">Sign In</h2>
+                <form method="POST">
 
 
-                        <div class="form-group">
-                            <label for="password">Password:</label>
-                            <input type="password" class="form-control" id="password" name="password" required>
-                        </div>
+                    <div class="form-group">
+                        <label for="email">Email Address:</label>
+                        <input type="email" class="form-control" id="email" name="email" required>
+                    </div>
 
-                    
-                        <button type="submit" class="btn btn-primary btn-block mt-4" name = "login">Submit</button>
-                    </form>
-                    <p class="login-wrapper-footer-text mt-3">Don't have an account? <a href="registration.php" class="text-reset">Register here</a></p>
-                </div>
+
+                    <div class="form-group">
+                        <label for="password">Password:</label>
+                        <input type="password" class="form-control" id="password" name="password" required>
+                    </div>
+
+
+                    <button type="submit" class="btn btn-primary btn-block mt-4" name="login">Submit</button>
+                </form>
+                <p class="login-wrapper-footer-text mt-3">Don't have an account? <a href="registration.php"
+                        class="text-reset"><strong style="font-weight:700">Register here</strong></a></p>
             </div>
         </div>
-    
-    
-    </body>
+    </div>
 
-	<?php include "inc/footer.php"; ?>
+
+</body>
+
+<?php include "inc/footer.php"; ?>

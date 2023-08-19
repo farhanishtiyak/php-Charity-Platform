@@ -63,59 +63,62 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 }
 ?>
 
-	<head>
-		<!-- volunteer css -->
+<head>
+    <!-- volunteer css -->
 
-		<link rel="stylesheet" type="text/css" href="css/volunteer.css">
+    <link rel="stylesheet" type="text/css" href="css/volunteer.css">
 
-		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-		integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-	
-	</head>
-	
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
-	<body>
-        <div class="container mt-5 card p-5">
-            <div class="row" >
-                <div class="col-md-8 offset-md-2">
-                    <h2 class="text-center mb-4">Sign Up</h2>
-                    <form method = "POST" >
-
-                        <div class="form-group">
-                            <label for="name">Full Name:</label>
-                            <input type="text" class="form-control" id="name" name="name" required>
-                        </div>
+</head>
 
 
-                        <div class="form-group">
-                            <label for="email">Email Address:</label>
-                            <input type="email" class="form-control" id="email" name="email" required>
-                        </div>
+<body>
+    <div class="container mt-5 card p-5" style="-webkit-box-shadow: 1px 0px 20px 1px rgba(0,0,0,0.81);
+-moz-box-shadow: 1px 0px 20px 1px rgba(0,0,0,0.81);
+box-shadow: 1px 0px 20px 1px rgba(0,0,0,0.81);">
+        <div class="row">
+            <div class="col-md-8 offset-md-2">
+                <h2 class="text-center mb-4">Sign Up</h2>
+                <form method="POST">
+
+                    <div class="form-group">
+                        <label for="name">Full Name:</label>
+                        <input type="text" class="form-control" id="name" name="name" required>
+                    </div>
 
 
-                        <div class="form-group">
-                            <label for="phone">Phone Number:</label>
-                            <input type="tel" class="form-control" id="phone" name="phone" required>
-                        </div>
+                    <div class="form-group">
+                        <label for="email">Email Address:</label>
+                        <input type="email" class="form-control" id="email" name="email" required>
+                    </div>
 
-                        <div class="form-group">
-                            <label for="password">Password:</label>
-                            <input type="password" class="form-control" id="password" name="password" required>
-                        </div>
 
-                        <div class="form-group">
-                            <label for="cpassword">Confirm Password:</label>
-                            <input type="password" class="form-control" id="cpassword" name="cpassword" required>
-                        </div>
+                    <div class="form-group">
+                        <label for="phone">Phone Number:</label>
+                        <input type="tel" class="form-control" id="phone" name="phone" required>
+                    </div>
 
-                        <button type="submit" class="btn btn-primary btn-block mt-4">Submit</button>
-                    </form>
-                    <p class="login-wrapper-footer-text mt-3">Already have an account? <a href="login.php" class="text-reset">Login here</a></p>
-                </div>
+                    <div class="form-group">
+                        <label for="password">Password:</label>
+                        <input type="password" class="form-control" id="password" name="password" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="cpassword">Confirm Password:</label>
+                        <input type="password" class="form-control" id="cpassword" name="cpassword" required>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary btn-block mt-4">Submit</button>
+                </form>
+                <p class="login-wrapper-footer-text mt-3">Already have an account? <a href="login.php"
+                        class="text-reset"><strong style="font-weight:700">Login here</strong></a></p>
             </div>
         </div>
+    </div>
 
-        <?php ob_end_flush(); ?>
-    </body>
+    <?php ob_end_flush(); ?>
+</body>
 
-	<?php include "inc/footer.php"; ?>
+<?php include "inc/footer.php"; ?>
