@@ -1,5 +1,6 @@
 <?php 
     include "inc/header.php"; 
+    ob_start();
     if(!empty($_SESSION['loginEmail'])){
         header('Location: index.php');
     }
@@ -145,9 +146,25 @@ box-shadow: 1px 0px 20px 1px rgba(0,0,0,0.81);">
 
 
                     <button type="submit" class="btn btn-primary btn-block mt-4" name="login">Submit</button>
+
                 </form>
-                <p class="login-wrapper-footer-text mt-3">Don't have an account? <a href="registration.php"
-                        class="text-reset"><strong style="font-weight:700">Register here</strong></a></p>
+
+                <div class="col-md-12 d-flex">
+                    <div class="col-md-6">
+                        <p class="login-wrapper-footer-text mt-3">Don't have an account? <a href="registration.php"
+                                class="text-reset" style="text-decoration: none;"><strong style="font-weight:700"
+                                    class="text-primary">Register here</strong></a>
+                        </p>
+                    </div>
+                    <div class="col-md-6">
+                        <p class="login-wrapper-footer-text mt-3"><a href="forget.php" class="text-reset"
+                                style="text-decoration: none;">Reset your password-><strong style="font-weight:700"
+                                    class="text-info">Forget
+                                    Password</strong></a>
+                        </p>
+                    </div>
+                </div>
+
             </div>
         </div>
     </div>
