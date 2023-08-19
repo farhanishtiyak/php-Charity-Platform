@@ -159,11 +159,11 @@
                     <div class="content">
                         <a href="#" target="_blank">
                             <div class="content-overlay"></div>
-                            <img class="content-image img-fluid d-block mx-auto" src="img/vol1.jpg" alt="">
+                            <img class="content-image img-fluid d-block mx-auto" src="img/volunteer1.jpg" alt="">
                             <div class="content-details fadeIn-bottom">
-                                <h4>Andy Florence</h4>
+                                <h4>Farhan Ishtiyak Sezar</h4>
                                 <p>
-                                    inappropriate behavior
+                                    Competitive Programmer
                                 </p>
                             </div>
                         </a>
@@ -175,11 +175,11 @@
                     <div class="content">
                         <a href="#" target="_blank">
                             <div class="content-overlay"></div>
-                            <img class="content-image img-fluid d-block mx-auto" src="img/vol2.jpg" alt="">
+                            <img class="content-image img-fluid d-block mx-auto" src="img/volunteer2.jpg" alt="">
                             <div class="content-details fadeIn-bottom">
-                                <h4>Andy Florence</h4>
+                                <h4>Rashedunnabi Rashed</h4>
                                 <p>
-                                    inappropriate behavior
+                                    Competitive Programmer
                                 </p>
                             </div>
                         </a>
@@ -191,11 +191,11 @@
                     <div class="content">
                         <a href="#" target="_blank">
                             <div class="content-overlay"></div>
-                            <img class="content-image img-fluid d-block mx-auto" src="img/vol1.jpg" alt="">
+                            <img class="content-image img-fluid d-block mx-auto" src="img/volunteer3.jpg" alt="">
                             <div class="content-details fadeIn-bottom">
-                                <h4>Farhan</h4>
+                                <h4>Emamul Rafi</h4>
                                 <p>
-                                    inappropriate behavior
+                                    Web Developer
                                 </p>
                             </div>
                         </a>
@@ -207,11 +207,11 @@
                     <div class="content">
                         <a href="#" target="_blank">
                             <div class="content-overlay"></div>
-                            <img class="content-image img-fluid d-block mx-auto" src="img/vol2.jpg" alt="">
+                            <img class="content-image img-fluid d-block mx-auto" src="img/vol5.jpg" alt="">
                             <div class="content-details fadeIn-bottom">
-                                <h4>Ishtiyak</h4>
+                                <h4>Nur Alamin</h4>
                                 <p>
-                                    inappropriate behavior
+                                    Photographer
                                 </p>
                             </div>
                         </a>
